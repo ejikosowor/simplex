@@ -1,0 +1,7 @@
+imports:
+  - { resource: 'listeners.yaml' }
+  - { resource: 'events.yaml' }
+  - { resource: 'kernel.yaml' }
+  - { resource: 'controllers.yaml' }
+  - { resource: 'routing.yaml' }
+  - { resource: 'twig.yaml' }

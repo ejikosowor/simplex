@@ -1,0 +1,17 @@
+services:
+  listener.router:
+    class: Symfony\Component\HttpKernel\EventListener\RouterListener
+    arguments:
+      matcher: "@router.matcher"
+      request_stack: "@request_stack"
+      context: "@router.context"
+  listener.response:
+    class: Symfony\Component\HttpKernel\EventListener\ResponseListener
+    arguments: ["UTF-8"]
+  listener.string_response:
+    class: App\Simplex\Listeners\StringResponseListener
+  listener.stream_response:
+    class: Symfony\Component\HttpKernel\EventListener\StreamedResponseListener
+  listener.exception:
+    class: Symfony\Component\HttpKernel\EventListener\ExceptionListener
+    arguments: [App\Controllers\ErrorController::exception]

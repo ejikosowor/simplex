@@ -1,0 +1,7 @@
+services:
+  templating.twig_loader:
+    class: Twig\Loader\FilesystemLoader
+    arguments: [ "views" ]
+  templating.twig:
+    class: Twig\Environment
+    arguments: [ "@templating.twig_loader" ]
