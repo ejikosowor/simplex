@@ -1,0 +1,8 @@
+services:
+  dispatcher:
+    class: Symfony\Component\EventDispatcher\EventDispatcher
+    calls:
+        - [ addSubscriber, ["@listener.router"]]
+        - [ addSubscriber, ["@listener.response"]]
+        - [ addSubscriber, ["@listener.exception"]]
+        - [ addSubscriber, ["@listener.string_response"]]

@@ -1,0 +1,8 @@
+services:
+  controller.base:
+    abstract: true
+    class: App\Controllers\AbstractController
+    arguments: [ "@templating.twig" ]
+  controller.default:
+    class: App\Controllers\HomeController
+    arguments: [ "@templating.twig" ]

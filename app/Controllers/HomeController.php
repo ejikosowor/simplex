@@ -2,14 +2,20 @@
 
 namespace App\Controllers;
 
+use App\Controllers\AbstractController;
 use App\Simplex\Listeners\ResponseEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomeController
+class HomeController extends AbstractController
 {
     public function index()
     {
-        return 'hello world';
+        return $this->view('index.html.twig');
+    }
+
+    public function login()
+    {
+        return $this->view('login.html.twig');
     }
 }

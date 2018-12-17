@@ -1,0 +1,21 @@
+imports:
+  - { resource: 'routes/default.yaml' }
+
+services:
+  route.collection:
+    class: Symfony\Component\Routing\RouteCollection
+    calls:
+      - [ add, ["route_home", "@route.home"] ]
+      - [ add, ["route_login", "@route.login"] ]
+  router.context:
+      class: Symfony\Component\Routing\RequestContext
+      calls:
+        - [ fromRequest, ["@request"] ]
+  router.matcher:
+    class: Symfony\Component\Routing\Matcher\UrlMatcher
+    arguments: [ "@route.collection", "@router.context" ]
+  router.generator:
+    class: Symfony\Component\Routing\Generator\UrlGenerator
+    arguments:
+      routes: "@route.collection"
+      context: "@router.context"

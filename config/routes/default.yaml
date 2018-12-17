@@ -1,0 +1,13 @@
+services:
+  route.home:
+    class: Symfony\Component\Routing\Route
+    arguments:
+      path: /
+      defaults:
+        _controller: ["@controller.default", 'index']
+  route.login:
+    class: Symfony\Component\Routing\Route
+    arguments:
+      path: /login
+      defaults:
+        _controller: ["@controller.default", 'login']

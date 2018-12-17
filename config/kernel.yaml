@@ -1,0 +1,19 @@
+services:
+  request_attributes:
+    class: \Symfony\Component\HttpFoundation\ParameterBag
+    calls:
+      - [ set, [ _controller, ["@controller.default", index ]]]
+  request:
+    class: Symfony\Component\HttpFoundation\Request
+    factory: [ Symfony\Component\HttpFoundation\Request, createFromGlobals ]
+    properties:
+      attributes: "@request_attributes"
+  request_stack:
+    class: Symfony\Component\HttpFoundation\RequestStack
+  controller_resolver:
+    class: Symfony\Component\HttpKernel\Controller\ControllerResolver
+  argument_resolver:
+    class: Symfony\Component\HttpKernel\Controller\ArgumentResolver
+  framework:
+    class: Symfony\Component\HttpKernel\HttpKernel
+    arguments: ["@dispatcher", "@controller_resolver", "@request_stack", "@argument_resolver"]
