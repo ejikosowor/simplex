@@ -12,7 +12,7 @@ $request = Request::createFromGlobals();
 
 $container = include 'app/container.php';
 $config = include 'app/config.php';
-$database = include 'app/database.php';
+// $database = include 'app/database.php';
 
 $container->setParameter('routes', include 'app/routes.php');
 
