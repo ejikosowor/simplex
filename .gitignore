@@ -1,0 +1,5 @@
+/public/node_modules
+/public/images
+/public/css
+/vendor
+/.env
