@@ -1,0 +1,5 @@
+services:
+  console:
+    class: Symfony\Component\Console\Application
+    arguments: ["Simplex Console Application", "2.0"]
+    public: true

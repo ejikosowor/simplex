@@ -5,3 +5,4 @@ imports:
   - { resource: 'controllers.yaml' }
   - { resource: 'routing.yaml' }
   - { resource: 'twig.yaml' }
+  - { resource: 'console.yaml' }
