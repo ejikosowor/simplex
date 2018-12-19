@@ -9,7 +9,9 @@
         "symfony/yaml": "^4.2",
         "twig/twig": "^2.6",
         "symfony/proxy-manager-bridge": "^4.2",
-        "symfony/console": "^4.2"
+        "symfony/console": "^4.2",
+        "doctrine/orm": "^2.6",
+        "symfony/filesystem": "^4.2"
     },
     "autoload": {
         "psr-4": {

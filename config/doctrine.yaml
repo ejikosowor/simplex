@@ -1,0 +1,21 @@
+parameters:
+  doctrine.driver: "pdo_mysql"
+  doctrine.user: "simplex"
+  doctrine.password: "904310813"
+  doctrine.dbname: "bug_tracker"
+  doctrine.paths: ["app/Models"]
+  doctrine.is_dev: true
+
+services:
+  doctrine.config:
+    class: Doctrine\ORM\Configuration
+    factory: [ Doctrine\ORM\Tools\Setup, createAnnotationMetadataConfiguration ]
+    arguments: ["%doctrine.paths%", "%doctrine.is_dev%"]
+  doctrine.entity_manager:
+    class: Doctrine\ORM\EntityManager
+    factory: [ Doctrine\ORM\EntityManager, create ]
+    arguments: 
+          driver: "%doctrine.driver%"
+          user: "%doctrine.user%"
+          password: "%doctrine.password%"
+          dbname: "%doctrine.dbname%"

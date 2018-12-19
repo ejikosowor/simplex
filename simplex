@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+
+<?php
+
+require_once 'vendor/autoload.php';
+
+$container = include 'app/container.php';
+
+$application = $container->get('console');
+$application->addCommands([
+    new App\Simplex\Commands\CreateModelCommand(),
+    new App\Simplex\Commands\CreateControllerCommand()
+]);
+$application->run();
